@@ -10,7 +10,7 @@ document.getElementById('btnDownload').addEventListener('click', async () => {
   resultDiv.innerHTML = '<p style="color:white">Loading...</p>';
 
   try {
-    // GANTI PAKE PROXY BARU BIAR GA DIBLOK
+    // GANTI PAKE PROXY BARU
     const apiUrl = `https://api.tikwm.com/api/?url=${encodeURIComponent(url)}`;
     const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(apiUrl)}`;
     

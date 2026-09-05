@@ -10,9 +10,9 @@ document.getElementById('btnDownload').addEventListener('click', async () => {
   resultDiv.innerHTML = '<p style="color:white">Loading...</p>';
 
   try {
-    // Pake proxy biar ga kena CORS
-    const tikwmUrl = `https://api.tikwm.com/api/?url=${encodeURIComponent(url)}`;
-    const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(tikwmUrl)}`;
+    // GANTI PAKE PROXY BARU BIAR GA DIBLOK
+    const apiUrl = `https://api.tikwm.com/api/?url=${encodeURIComponent(url)}`;
+    const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(apiUrl)}`;
     
     const res = await fetch(proxyUrl);
     const data = await res.json();

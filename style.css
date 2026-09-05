@@ -1,0 +1,25 @@
+* {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif;}
+body, html {height: 100%; overflow: hidden; color: white; text-align: center;}
+.bg-video {position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;}
+.container {position: relative; z-index: 1; padding: 30px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;}
+.btn-dev {background: rgba(255,255,255,0.9); color: #111; padding: 8px 20px; border-radius: 20px; text-decoration: none; font-weight: bold; margin-bottom: 20px; transition: 0.3s;}
+.btn-dev:hover {background: white; transform: scale(1.05);}
+h1 {font-size: 2.5em; margin-bottom: 5px; text-shadow: 2px 2px 5px black;}
+p {margin-bottom: 25px; text-shadow: 1px 1px 3px black;}
+.box-wrapper {position: relative; width: 90%; max-width: 500px; height: 180px; border-radius: 15px; overflow: hidden; box-shadow: 0 0 20px rgba(0,0,0,0.5);}
+.box-bg {position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;}
+.box-content {
+  position: relative; z-index: 1; width: 100%; height: 100%; padding: 20px; 
+  display: flex; flex-direction: column; gap: 12px; justify-content: center; align-items: center;
+}
+.box-content input {
+  width: 90%; padding: 12px; border: none; border-radius: 8px; outline: none; font-size: 14px;
+  background: rgba(0,0,0,0.5); color: white; text-shadow: 1px 1px 2px black;
+}
+.box-content input::placeholder {color: #ddd;}
+.box-content button {
+  width: 90%; padding: 12px; border: none; border-radius: 8px; background: rgba(255,255,255,0.95); 
+  color: #000; font-weight: bold; cursor: pointer; transition: 0.3s;
+}
+.box-content button:hover {background: white;}
+#result a {color: #000; font-weight: bold; text-decoration: none; background: #fff; padding: 8px 15px; border-radius: 8px; display: inline-block; margin-top: 10px;}

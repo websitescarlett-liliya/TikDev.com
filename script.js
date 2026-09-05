@@ -1,5 +1,5 @@
 document.getElementById('btnDownload').addEventListener('click', async () => {
-  const url = document.getElementById('tiktokUrl').value.trim();
+  let url = document.getElementById('tiktokUrl').value.trim();
   const resultDiv = document.getElementById('result');
 
   if (!url) {
@@ -10,7 +10,15 @@ document.getElementById('btnDownload').addEventListener('click', async () => {
   resultDiv.innerHTML = '<p style="color:white">Loading...</p>';
 
   try {
-    // GANTI PAKE PROXY BARU
+    // 1. Kalau link pendek vt.tiktok, kita expand dulu pake proxy
+    if(url.includes('vt.tiktok.com')){
+      const expandRes = await fetch(`https://corsproxy.io/?${encodeURIComponent(url)}`);
+      const html = await expandRes.text();
+      const match = html.match(/https:\/\/www\.tiktok\.com\/@[^"]+\/video\/\d+/);
+      if(match) url = match[0]; // ambil link panjangnya
+    }
+
+    // 2. Baru tembak ke API
     const apiUrl = `https://api.tikwm.com/api/?url=${encodeURIComponent(url)}`;
     const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(apiUrl)}`;
     

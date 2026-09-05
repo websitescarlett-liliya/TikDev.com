@@ -10,9 +10,11 @@ document.getElementById('btnDownload').addEventListener('click', async () => {
   resultDiv.innerHTML = '<p style="color:white">Loading...</p>';
 
   try {
-    // Pake endpoint /api/ biar stabil + tambahin mode cors
-    const apiUrl = `https://api.tikwm.com/api/?url=${encodeURIComponent(url)}`;
-    const res = await fetch(apiUrl, { mode: 'cors' });
+    // Pake proxy biar ga kena CORS
+    const tikwmUrl = `https://api.tikwm.com/api/?url=${encodeURIComponent(url)}`;
+    const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(tikwmUrl)}`;
+    
+    const res = await fetch(proxyUrl);
     const data = await res.json();
 
     if (data.code === 0 && data.data && data.data.music) {
@@ -23,7 +25,7 @@ document.getElementById('btnDownload').addEventListener('click', async () => {
         <a href="${mp3Link}" download target="_blank">Download MP3 Sekarang</a>
       `;
     } else {
-      resultDiv.innerHTML = `<p style="color:red">Gagal: ${data.msg || 'Link tidak valid'}</p>`;
+      resultDiv.innerHTML = `<p style="color:red">Gagal: ${data.msg || 'Link tidak valid/privat'}</p>`;
     }
   } catch (err) {
     resultDiv.innerHTML = '<p style="color:red">Error: Gagal konek ke server. Coba link lain.</p>';

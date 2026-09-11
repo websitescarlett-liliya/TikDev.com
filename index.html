@@ -3,32 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TikS.Mp3 - Download MP3 TikTok No Iklan</title>
+  <title>Scarlett TikTok Downloader</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-  <video autoplay muted loop playsinline class="bg-video">
-    <source src="https://files.catbox.moe/7v6clb.mp4" type="video/mp4">
-  </video>
-
   <div class="container">
-    <a href="#" class="btn-dev">Kusus Developer</a>
+    <header>
+      <div class="logo"><i data-lucide="music-2"></i> Scarlett TikTok Downloader</div>
+      <div id="premium-badge" class="badge hidden"><i data-lucide="crown"></i> PREMIUM</div>
+    </header>
 
-    <h1>TikS.Mp3</h1>
-    <p>Download MP3 TikTok Kualitas Terbaik</p>
+    <div id="timer-box" class="timer-box">
+      <p>Waktu Gratis: <span id="timer">01:00</span></p>
+      <button id="btn-premium" class="btn-premium"><i data-lucide="zap"></i> Buka Premium</button>
+    </div>
 
-    <div class="box-wrapper">
-      <video autoplay muted loop playsinline class="box-bg">
-        <source src="https://files.catbox.moe/j37n48.mp4" type="video/mp4">
-      </video>
-      <div class="box-content">
-        <input type="text" id="tiktokUrl" placeholder="Tempel Link TikTok di sini...">
-        <button id="btnDownload">Download MP3 Buat JJ No Iklan</button>
-        <div id="result"></div>
+    <main class="card">
+      <div class="input-group">
+        <input type="text" id="url-input" placeholder="Tempel link TikTok disini...">
+        <button id="btn-download"><i data-lucide="download"></i> Download MP3</button>
+      </div>
+      <div id="loading" class="hidden"><div class="spinner"></div></div>
+      <div id="result" class="hidden"></div>
+      <div id="error" class="error hidden"></div>
+    </main>
+
+    <!-- POPUP IKLAN SPONSOR -->
+    <div id="ad-popup" class="ad-popup hidden">
+      <div class="ad-content">
+        <h3><i data-lucide="megaphone"></i> Waktu Gratis Habis</h3>
+        <p>Tonton 3 sponsor ini untuk lanjut gratis atau upgrade Premium</p>
+        <div id="ad-list"></div>
+        <button id="btn-close-ad" class="btn btn-primary hidden">Lanjutkan Download</button>
       </div>
     </div>
-  </div>
 
+    <footer>© 2026 Scarlett | 1 Menit Gratis / 3 Iklan</footer>
+  </div>
   <script src="script.js"></script>
 </body>
-</html>
+        </html>

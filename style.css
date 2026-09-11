@@ -1,25 +1,23 @@
-* {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif;}
-body, html {height: 100%; overflow: hidden; color: white; text-align: center;}
-.bg-video {position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;}
-.container {position: relative; z-index: 1; padding: 30px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;}
-.btn-dev {background: rgba(255,255,255,0.9); color: #111; padding: 8px 20px; border-radius: 20px; text-decoration: none; font-weight: bold; margin-bottom: 20px; transition: 0.3s;}
-.btn-dev:hover {background: white; transform: scale(1.05);}
-h1 {font-size: 2.5em; margin-bottom: 5px; text-shadow: 2px 2px 5px black;}
-p {margin-bottom: 25px; text-shadow: 1px 1px 3px black;}
-.box-wrapper {position: relative; width: 90%; max-width: 500px; height: 180px; border-radius: 15px; overflow: hidden; box-shadow: 0 0 20px rgba(0,0,0,0.5);}
-.box-bg {position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;}
-.box-content {
-  position: relative; z-index: 1; width: 100%; height: 100%; padding: 20px; 
-  display: flex; flex-direction: column; gap: 12px; justify-content: center; align-items: center;
+:root{
+  --bg:#090a0f; --card:#12141d; --border:#262a3d;
+  --blue:#0088ff; --green:#00e676; --gold:#FFD700; --text:#fff; --muted:#8a8fA8;
 }
-.box-content input {
-  width: 90%; padding: 12px; border: none; border-radius: 8px; outline: none; font-size: 14px;
-  background: rgba(0,0,0,0.5); color: white; text-shadow: 1px 1px 2px black;
-}
-.box-content input::placeholder {color: #ddd;}
-.box-content button {
-  width: 90%; padding: 12px; border: none; border-radius: 8px; background: rgba(255,255,255,0.95); 
-  color: #000; font-weight: bold; cursor: pointer; transition: 0.3s;
-}
-.box-content button:hover {background: white;}
-#result a {color: #000; font-weight: bold; text-decoration: none; background: #fff; padding: 8px 15px; border-radius: 8px; display: inline-block; margin-top: 10px;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}
+body{background:var(--bg);color:var(--text);padding:20px}
+.container{max-width:600px;margin:0 auto}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}
+.logo{display:flex;gap:8px;color:var(--blue);font-weight:700;font-size:1.2rem}
+.badge{background:var(--gold);color:#000;padding:4px 10px;border-radius:20px;font-size:0.8rem;display:flex;gap:4px}
+.timer-box{background:var(--card);border:1px solid var(--border);padding:12px;border-radius:10px;display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}
+.btn-premium{background:var(--gold);color:#000;border:none;padding:8px 12px;border-radius:8px;font-weight:700;cursor:pointer;display:flex;gap:5px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px}
+.input-group{display:flex;gap:8px}
+#url-input{flex:1;padding:12px;border-radius:8px;border:1px solid var(--border);background:#1b1e2b;color:#fff}
+#btn-download{padding:12px 16px;background:var(--blue);border:none;border-radius:8px;color:#fff;font-weight:600;cursor:pointer}
+.ad-popup{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);display:flex;align-items:center;justify-content:center;z-index:999}
+.ad-content{background:var(--card);padding:20px;border-radius:12px;width:90%;max-width:400px;text-align:center}
+.ad-item{background:#1b1e2b;padding:10px;margin:8px 0;border-radius:8px;cursor:pointer}
+.hidden{display:none}
+.spinner{border:3px solid var(--border);border-top:3px solid var(--blue);border-radius:50%;width:24px;height:24px;animation:spin 1s linear infinite;margin:10px auto}
+@keyframes spin{to{transform:rotate(360deg)}}
+.error{background:#ff0033;padding:10px;border-radius:8px;margin-top:10px}
